@@ -1,3 +1,0 @@
-Modelo,Profundidad,Hojas,MSE_Train,MSE_Test,MAE_Train,MAE_Test,R²_Train,R²_Test
-DT_Profundo,12,121,0.00,128460.06,0.00,264.84,1.0000,0.9761
-DT_GridSearchCV,7,37,14304.10,131213.53,79.55,263.35,0.9973,0.9755
