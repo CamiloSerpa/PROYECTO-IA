@@ -1,0 +1,34 @@
+
+DATASET LIMPIO - DENGUE COLOMBIA 2022-2024
+======================================================================
+
+Registros totales después de limpieza: 501,728
+Columnas: 13
+Rango temporal: 2022 - 2024
+Semanas: 1-53
+
+Distribución por año:
+ANO
+2022     65690
+2023    126411
+2024    309627
+
+Distribución por sexo:
+SEXO
+M    253725
+F    248003
+
+Estadísticas de edad:
+count    501728.000000
+mean         23.458545
+std          18.813512
+min           1.000000
+25%          10.000000
+50%          17.000000
+75%          32.000000
+max         110.000000
+
+Archivos generados:
+1. casos_por_semana_agregado.csv - Casos totales por semana
+2. datos_dengue_con_features.csv - Datos con características temporales
+        

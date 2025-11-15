@@ -1,0 +1,87 @@
+
+REPORTE FINAL - REDES NEURONALES
+DENGUE COLOMBIA 2022-2024
+======================================================================
+
+1. RESUMEN EJECUTIVO
+   - Objetivo: Predecir casos de dengue con redes neuronales profundas
+   - Modelos: MLP (Multi-Layer Perceptron) + DNN (Deep Neural Network)
+   - Framework: TensorFlow/Keras
+   - Regularización: Dropout, Early Stopping
+   - Muestras entrenamiento: 121
+   - Muestras prueba: 31
+
+2. ARQUITECTURA MLP
+   Estructura:
+   Input(10) → Dense(64, ReLU) → Dropout(0.2)
+            → Dense(32, ReLU) → Dropout(0.2)
+            → Dense(16, ReLU)
+            → Output(1)
+   
+   Resultados:
+   - R² Train: 0.9660
+   - R² Test:  0.9656
+   - MAE Test: 354.91
+   - Épocas:   200
+
+3. ARQUITECTURA DNN
+   Estructura:
+   Input(10) → Dense(128, ReLU) → Dropout(0.3)
+            → Dense(64, ReLU) → Dropout(0.3)
+            → Dense(32, ReLU) → Dropout(0.2)
+            → Dense(16, ReLU)
+            → Dense(8, ReLU)
+            → Output(1)
+   
+   Resultados:
+   - R² Train: 0.9056
+   - R² Test:  0.9127
+   - MAE Test: 574.56
+   - Épocas:   47
+
+4. MEJOR MODELO REDES NEURONALES
+   Modelo: MLP
+   R² Test: 0.9656
+   MAE Test: 354.91
+
+5. ANÁLISIS DE OVERFITTING
+   
+   MLP:
+   - Diferencia R²: 0.0005
+   
+   DNN:
+   - Diferencia R²: -0.0071
+
+6. COMPARACIÓN VS RANDOM FOREST (MEJOR MODELO P6)
+   
+   Random Forest: R² = 0.9811, MAE = 225.32
+   Mejor RN:     R² = 0.9656, MAE = 354.91
+   
+   Diferencia:   1.55%
+
+7. VENTAJAS Y DESVENTAJAS DE REDES NEURONALES
+   
+   Ventajas:
+   ✅ Captura relaciones no-lineales complejas
+   ✅ Flexible, adaptable a múltiples tipos de datos
+   ✅ Early Stopping previene overfitting automáticamente
+   
+   Desventajas:
+   ❌ Menos interpretable que árboles/RF
+   ❌ Requiere más datos (tenemos pocas muestras)
+   ❌ Más tiempo computacional
+   ❌ Hyperparámetros más complejos
+
+8. CONCLUSIÓN FINAL
+   
+   Mejor modelo GLOBAL: Random Forest (R² = 0.9811)
+   Mejor red neuronal: MLP (R² = 0.9656)
+   
+   RECOMENDACIÓN: Usar Random Forest
+   ✓ Mejor interpretabilidad
+   ✓ Mayor R² test
+   ✓ Menor MAE test
+   ✓ Más robusto
+
+======================================================================
+        

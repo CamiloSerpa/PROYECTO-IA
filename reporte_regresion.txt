@@ -1,0 +1,68 @@
+
+REPORTE FINAL - REGRESIÓN MULTIVARIADA
+DENGUE COLOMBIA 2022-2024
+======================================================================
+
+1. RESUMEN EJECUTIVO
+   - Objetivo: Predecir casos de dengue por semana
+   - Tipo: Regresión multivariada
+   - Modelos: Linear Regression, Ridge, Lasso
+   - Método de tuning: GridSearchCV con validación cruzada k=5
+   - Muestras entrenamiento: 121
+   - Muestras prueba: 31
+
+2. RESULTADOS POR MODELO
+
+   LINEAR REGRESSION (BASELINE):
+   - R² Train: 0.9879
+   - R² Test:  0.9765
+   - MSE Test: 126256.08
+   - MAE Test: 213.11
+   
+   RIDGE REGRESSION (Alpha=0.1):
+   - R² Train: 0.9878
+   - R² Test:  0.9775
+   - MSE Test: 120737.28
+   - MAE Test: 211.54
+   
+   LASSO REGRESSION (Alpha=10):
+   - R² Train: 0.9863
+   - R² Test:  0.9722
+   - MSE Test: 149311.07
+   - MAE Test: 235.53
+
+3. MEJOR MODELO
+   Modelo: Ridge
+   R² Test: 0.9775
+   MAE Test: 211.54
+
+4. ANÁLISIS DE OVERFITTING
+   
+   Linear Regression:
+   - Diferencia R²: 0.0114
+   
+   Ridge:
+   - Diferencia R²: 0.0103
+   
+   Lasso:
+   - Diferencia R²: 0.0142
+
+5. CONCLUSIONES
+   - El modelo Ridge presenta el mejor R² en test (0.9775)
+   - Overfitting detectado: Evaluar si usar regularización adicional
+   - Validación cruzada k=5 fue efectiva para tuning de parámetros
+   - Features lag (TOTAL_CASOS_LAG1-4) contribuyen significativamente
+
+6. RECOMENDACIONES PARA PRÓXIMOS PASOS
+   - Probar Árboles de Decisión (capturan no-linealidad)
+   - Probar Random Forest (mejor generalización)
+   - Considerar Redes Neuronales con regularización L2
+   - Explorar features adicionales (variables externas si disponibles)
+
+ARCHIVOS GENERADOS:
+- resultados_regresion.csv: Tabla comparativa de modelos
+- 01_regresion_predicciones_vs_real.png: Scatter plots predicciones
+- 02_regresion_residuos.png: Análisis de residuos
+
+======================================================================
+        
