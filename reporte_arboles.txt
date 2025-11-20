@@ -1,0 +1,72 @@
+
+REPORTE FINAL - ÁRBOLES DE DECISIÓN
+DENGUE COLOMBIA 2022-2024
+======================================================================
+
+1. RESUMEN EJECUTIVO
+   - Objetivo: Predecir casos de dengue por semana usando árboles
+   - Modelos: Decision Tree sin restricción + Decision Tree con GridSearchCV
+   - Método de tuning: GridSearchCV con validación cruzada k=5
+   - Muestras entrenamiento: 121
+   - Muestras prueba: 31
+
+2. RESULTADOS POR MODELO
+
+   DECISION TREE - SIN RESTRICCIÓN:
+   - Profundidad: 12
+   - Número de hojas: 121
+   - R² Train: 1.0000
+   - R² Test:  0.9761
+   - MSE Test: 128460.06
+   - MAE Test: 264.84
+   
+   DECISION TREE + GRIDSEARCHCV:
+   - Profundidad: 7
+   - Número de hojas: 37
+   - R² Train: 0.9973
+   - R² Test:  0.9755
+   - MSE Test: 131213.53
+   - MAE Test: 263.35
+
+3. MEJOR MODELO
+   Modelo: DT_Profundo
+   R² Test: 0.9761
+   MAE Test: 264.84
+
+4. ANÁLISIS DE OVERFITTING
+   
+   Decision Tree (Sin restricción):
+   - Diferencia R²: 0.0239
+   - Interpretación: Overfitting mínimo
+   
+   Decision Tree (GridSearchCV):
+   - Diferencia R²: 0.0218
+   - Interpretación: Overfitting mínimo
+
+5. FEATURE IMPORTANCE
+   
+   Top 3 Features más importantes:
+               Feature  Importancia
+6  TOTAL_CASOS_LAG1     0.837984
+9  TOTAL_CASOS_LAG4     0.154215
+3            LLUVIA     0.002739
+
+6. CONCLUSIONES
+   - Árboles vs Regresión: Comparar R² test (~0.975 esperado en regresión)
+   - GridSearchCV mejoró la regularización automáticamente
+   - Features lag siguen siendo importantes para árboles
+   - Profundidad óptima: 7 (más somero que sin restricción)
+
+7. RECOMENDACIONES PARA PRÓXIMOS PASOS
+   - PASO 6: Probar Random Forest (múltiples árboles = mejor generalización)
+   - PASO 7: Redes Neuronales pueden capturar interacciones complejas
+   - Considerar ensambles (votación entre modelos)
+
+ARCHIVOS GENERADOS:
+- resultados_arboles.csv: Tabla comparativa de modelos
+- 01_arboles_predicciones_vs_real.png: Scatter plots predicciones
+- 02_arboles_feature_importance.png: Importancia de features
+- 03_arboles_residuos.png: Análisis de residuos
+
+======================================================================
+        

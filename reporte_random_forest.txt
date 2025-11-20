@@ -1,0 +1,64 @@
+
+REPORTE FINAL - RANDOM FOREST
+DENGUE COLOMBIA 2022-2024
+======================================================================
+
+1. RESUMEN EJECUTIVO
+   - Objetivo: Predecir casos de dengue usando ensambles de árboles
+   - Modelos: Random Forest Baseline + Random Forest con GridSearchCV
+   - Muestras entrenamiento: 121
+   - Muestras prueba: 31
+
+2. RESULTADOS POR MODELO
+
+   RANDOM FOREST - BASELINE (100 árboles):
+   - OOB Score: 0.9803
+   - R² Train: 0.9971
+   - R² Test:  0.9811
+   - MSE Test: 101455.74
+   - MAE Test: 225.32
+   
+   RANDOM FOREST + GRIDSEARCHCV:
+   - N_Estimators: 200
+   - R² Train: 0.9972
+   - R² Test:  0.9801
+   - MSE Test: 106648.37
+   - MAE Test: 228.72
+
+3. MEJOR MODELO RANDOM FOREST
+   Modelo: RF_Baseline
+   R² Test: 0.9811
+   MAE Test: 225.32
+
+4. ANÁLISIS DE OVERFITTING
+   
+   Random Forest (Baseline):
+   - Diferencia R²: 0.0160
+   
+   Random Forest (GridSearchCV):
+   - Diferencia R²: 0.0171
+
+5. FEATURE IMPORTANCE (Top 3)
+   
+               Feature  Importancia
+6  TOTAL_CASOS_LAG1     0.577818
+8  TOTAL_CASOS_LAG3     0.180699
+7  TOTAL_CASOS_LAG2     0.162566
+
+6. VENTAJAS DE RANDOM FOREST
+   
+   ✅ Múltiples árboles = reducción de overfitting
+   ✅ Robustez a outliers
+   ✅ Feature importance estable
+   ✅ Paralelizable (n_jobs=-1)
+   ✅ OOB Score para validación automática
+
+7. PRÓXIMO PASO: REDES NEURONALES (PASO 7)
+   
+   Se espera:
+   - R² similar (~0.975-0.99)
+   - Posibles mejoras en MAE
+   - Mayor capacidad para capturar no-linealidades
+
+======================================================================
+        
